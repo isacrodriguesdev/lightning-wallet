@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+message UserRequest {
+  string id = 1;
+}
+
+message BalanceResponse {
+  int64 Value = 1;
+}
+
+service Wallet {
+  rpc SyncWalletBalance(UserRequest) returns (BalanceResponse);
+}
